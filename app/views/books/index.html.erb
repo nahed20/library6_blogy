@@ -1,0 +1,7 @@
+<h1>Hellow</h1>
+<% @books.each do |book|%>   
+<h2> <%= book.title %> </h2> #this line display book title on the browser
+<p><%= link_to "View" , book_path(book)%></p>
+
+<% end %>
+
