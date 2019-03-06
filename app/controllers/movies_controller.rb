@@ -33,17 +33,16 @@ class MoviesController <  ApplicationController
 
    #create new movie
    def create 
-    # puts Book.create(params[:book]) #crate new book
-        @book = Movie.new(Movie_params)
+        @movie = Movie.new(movie_params)
         if @movie.save
-            redirect_to books_path
+            redirect_to movies_path
         else 
             render "new"
         end
     end
 
     def  movie_params
-        params.require(:movie).permit(:title, :director ,:rating )
+        params.require(:movie).permit(:title, :director )
     end
 
 

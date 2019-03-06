@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
-  resources :articles
-  resources :paintings
+  resources :cars
+  resources :people
+  resources :posts
+  get 'welcome/index'
+  root 'pages#index' #to go home direct .
+  get 'reviews/create'
+  get 'reviews/destory'
+   
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
     # get '/books' => "books#index" # books_path
     # post '/books' => "books#create" 
@@ -17,11 +23,14 @@ Rails.application.routes.draw do
     # delete '/movies/:id' => 'movies#destroy'
     # get '/movies/:id/edit' => "movies#edit", as: "edit_movie"
     # patch '/movies/:id' => "movies#update"
-   resources :books
-   resources :movies
-   resources :articles do
+  resources :books
+  resources :movies do 
+  resources :reviews 
+   end  
+  resources :paintings 
+  resources :articles do
   resources :comments
-end
+  end
 
 
   end
